@@ -15,14 +15,18 @@ $(function () {
 
   $("#resetTotal").click(function () {
     chrome.storage.sync.set({ total: 0 }, function () {
-      var notifOptions = {
-        // can checkout chrome developer website for more options
-        type: "basic",
-        iconUrl: "money-bag.png",
-        title: "Total reset",
-        message: "Total has been reset to 0!",
-      };
-      chrome.notifications.create("limitNotif", notifOptions);
+      chrome.notifications.create(
+        console.log("hello frmo notifications.create"),
+        // log show's up but not the notification - TODO
+        {
+          // can checkout chrome developer website for more options
+          type: "basic",
+          iconUrl: "money-bag.png",
+          title: "Total reset",
+          message: "Total has been reset to 0!",
+        },
+        () => {}
+      );
     });
   });
 });
