@@ -1,7 +1,8 @@
 $(function () {
-  // on popup open - getting the value from storage
-  chrome.storage.sync.get("total", function (budget) {
+  // on popup open - getting the value of total and limit from storage
+  chrome.storage.sync.get(["total", "limit"], function (budget) {
     $("#total").text(budget.total);
+    $("#limit").text(budget.limit);
   });
 
   $(`#spendAmount`).click(function () {
