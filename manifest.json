@@ -7,5 +7,6 @@
     "default_popup": "index.html",
     "default_icon": "salary.png"
   },
-  "permissions": ["storage"]
+  "permissions": ["storage"],
+  "options_page": "options.html "
 }
